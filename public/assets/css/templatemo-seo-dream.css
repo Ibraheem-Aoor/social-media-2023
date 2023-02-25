@@ -1020,6 +1020,11 @@ Features Style
 .second-feature .icon {
   background-image: url(../images/features-icon-black-02.png);
 }
+.third-feature .icon {
+  background-image: url(../images/checked_img.png);
+}
+
+
 
 .features-item .icon {
   width: 63px;

@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4">
-                                <div class="features-item first-feature wow fadeInUp" data-wow-duration="1s"
+                                <div class="features-item third-feature wow fadeInUp" data-wow-duration="1s"
                                     data-wow-delay="0.4s">
                                     <div class="third-number number">
                                         <h6>03</h6>
@@ -204,7 +204,8 @@
                             </div>
                         </div>
                     </div>
-                    <p><a rel="nofollow" href="{{route('home')}}" target="_parent">Here </a>we're a team of social media experts who believe in the power of social media to help
+                    <p><a rel="nofollow" href="{{ route('home') }}" target="_parent">Here </a>we're a team of social media
+                        experts who believe in the power of social media to help
                         businesses grow. We specialize in creating customized social media campaigns for businesses of all
                         sizes on platforms like Facebook, Twitter, Instagram, and LinkedIn. We're committed to delivering
                         results and working closely with our clients to understand their unique needs and goals.
@@ -212,144 +213,19 @@
 
 
                     </p>
-                    <div class="main-green-button"><a href="#">Discover company</a></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="services" class="our-services section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <h6>Our Services</h6>
-                        <h2>Discover What We Do &amp; <span>Offer</span> To Our <em>Clients</em></h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="icon">
-                                    <img src="assets/images/service-icon-01.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="right-content">
-                                    <h4>Similar Websites</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque
-                                        laudantium.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="icon">
-                                    <img src="assets/images/service-icon-02.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="right-content">
-                                    <h4>Website Trends</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque
-                                        laudantium.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="icon">
-                                    <img src="assets/images/service-icon-03.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="right-content">
-                                    <h4>Traffic Analysis</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque
-                                        laudantium.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="icon">
-                                    <img src="assets/images/service-icon-03.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="right-content">
-                                    <h4>Optimizing Keywords</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque
-                                        laudantium.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.7s">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="icon">
-                                    <img src="assets/images/service-icon-01.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="right-content">
-                                    <h4>Page Optimizations</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque
-                                        laudantium.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="icon">
-                                    <img src="assets/images/service-icon-02.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="right-content">
-                                    <h4>Deep URL Analysis</h4>
-                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dormque
-                                        laudantium.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div id="portfolio" class="our-portfolio section">
+    <div id="services" class="our-portfolio section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
                     <div class="section-heading wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <h6>Our Portofolio</h6>
-                        <h2>Discover Our Recent <em>Projects</em> And <span>Showcases</span></h2>
+                        <h6>Our Services</h6>
+                        <h2>Discover Our Recent <em>Services</em> For <span>Social Media Platforms</span></h2>
                     </div>
                 </div>
             </div>
@@ -361,13 +237,12 @@
                         <div class="item">
                             <div class="portfolio-item">
                                 <div class="thumb">
-                                    <img src="assets/images/portfolio-01.jpg" alt="">
+                                    <img src="assets/images/platforms/fb.jpeg" alt="">
                                     <div class="hover-content">
                                         <div class="inner-content">
                                             <a href="#">
-                                                <h4>Awesome Project 101</h4>
+                                                <h4>FB Services</h4>
                                             </a>
-                                            <span>Marketing</span>
                                         </div>
                                     </div>
                                 </div>
@@ -437,34 +312,6 @@
                                                 <h4>Awesome Project 106</h4>
                                             </a>
                                             <span>Artwork</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="portfolio-item">
-                                <div class="thumb">
-                                    <img src="assets/images/portfolio-04.jpg" alt="">
-                                    <div class="hover-content">
-                                        <div class="inner-content">
-                                            <a href="#">
-                                                <h4>Awesome Project 107</h4>
-                                            </a>
-                                            <span>Creative</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="portfolio-item">
-                                <div class="thumb">
-                                    <img src="assets/images/portfolio-01.jpg" alt="">
-                                    <div class="hover-content">
-                                        <div class="inner-content">
-                                            <a href="#">
-                                                <h4>Awesome Project 108</h4>
-                                            </a>
-                                            <span>Consulting</span>
                                         </div>
                                     </div>
                                 </div>

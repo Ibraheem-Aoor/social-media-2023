@@ -1,0 +1,48 @@
+<?php
+return
+[
+    'sidebar'   =>[
+        'platform'      =>  'platforms'
+    ],
+
+    'name'      =>  'name',
+    'created_at'      =>  'created_at',
+    'actions'         =>    'Actions',
+    'bol_integerations'     =>  'Bol Integerations',
+    'submit'   =>  'Submit',
+    'Actions'   =>  'Actions ',
+    'delete'        =>  'Delete',
+    'Caution'        => 'Attention📢',
+    'applicaion_success_message'    =>  'You Applied Successfully',
+    'select'    =>  'Select',
+    'new'   =>  'New',
+    'close' =>  'Close',
+    'store_name'    =>  'Store Name',
+    'api_user_name'     =>      'API User Name',
+    'api_password'      =>      'API Password',
+    'logo'          =>  'Logo',
+    'email_logo'        =>  'Email Logo',
+    'products' => 'Products',
+    'img' => 'Image',
+    'No' => 'No',
+    'product' => 'Product',
+    'first_name' => 'First Name',
+    'last_name' => 'Last Name',
+    'city' => 'City',
+    'country' => 'Country',
+    'zip_code' => 'Zip Code',
+    'street_name' => 'Street Name',
+    'house_number' => 'House Number',
+    'order_id'     => 'Order Id',
+    'ean'     => 'EAN',
+    'quantity'     => 'quantity',
+    'price'     => 'price',
+    'description'     => 'description',
+    'content'     => 'content',
+    'note'     => 'note',
+    'sell_price'     => 'sell_price',
+    'updated_success'     => '✔️ Updated Successfully',
+    'open'              =>      'OPEN',
+    'cancelled'              =>      'CANCELLED',
+
+];

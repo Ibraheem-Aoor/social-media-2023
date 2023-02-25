@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PlatformController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,22 @@ use Illuminate\Support\Facades\Route;
 Route::group(['controller' => HomeController::class] , function(){
     Route::get('/' , 'index')->name('home');
 });
+
+
+
+
+
+Route::group(['prefix' => 'backoffice'] , function()
+{
+    Auth::routes();
+    Route::group(['middleware' => 'auth' ,  'as' => 'admin.' ,]  , function(){
+        Route::get('dashboard' , [ AdminController::class  , 'dashboard'] )->name('.dashboard');
+        Route::resource('platform', PlatformController::class);
+        Route::get('platform-table-data', [PlatformController::class , 'getTableData'])->name('platform.table_data');
+        Route::get('platform-update', [PlatformController::class , 'update'])->name('platform.custom_updae');
+    });
+});
+
+Auth::routes(['login']);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
