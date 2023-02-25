@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Platform extends Model
 {
@@ -13,4 +14,9 @@ class Platform extends Model
         'name',
         'logo',
     ];
+
+    public function getLogo()
+    {
+        return Storage::url("platforms/{$this->logo}");
+    }
 }

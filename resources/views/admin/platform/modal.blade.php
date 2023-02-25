@@ -11,9 +11,8 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row mb-3">
-                            <div class="col-sm-6">
+                            <div class="col-sm-12 text-center" >
                                 <label for="">{{ __('custom.logo') }}</label>
-
                                 <div class="avatar-picture">
                                     <div class="image-input image-input-outline" id="imgUserProfile">
                                         <div class="image-input-wrapper" id="image-input-wrapper-1"

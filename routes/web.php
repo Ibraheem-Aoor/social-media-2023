@@ -26,12 +26,13 @@ Route::group(['controller' => HomeController::class] , function(){
 
 Route::group(['prefix' => 'backoffice'] , function()
 {
+    Route::redirect('' , '/backoffice/dashboard');
     Auth::routes();
     Route::group(['middleware' => 'auth' ,  'as' => 'admin.' ,]  , function(){
         Route::get('dashboard' , [ AdminController::class  , 'dashboard'] )->name('.dashboard');
         Route::resource('platform', PlatformController::class);
         Route::get('platform-table-data', [PlatformController::class , 'getTableData'])->name('platform.table_data');
-        Route::get('platform-update', [PlatformController::class , 'update'])->name('platform.custom_updae');
+        Route::post('platform-update/{id}', [PlatformController::class , 'update'])->name('platform.custom_updae');
     });
 });
 

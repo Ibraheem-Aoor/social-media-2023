@@ -91,7 +91,7 @@
                 <div class="card-header">
                     <h4 class="card-title">{{ __('custom.bol_integerations') }}</h4>
                     <p class="category"><button class="btn btn-outline-info" data-toggle="modal"
-                            data-target="#bol-account-create-update-modal" data-action="{{ route('admin.platform.store') }}"
+                            data-target="#platform-create-update-modal" data-action="{{ route('admin.platform.store') }}"
                             data-method="POST" data-is-create="1"><i class="fa fa-plus"></i></button></p>
                 </div>
                 <div class="card-body">
@@ -119,8 +119,8 @@
             </div>
         </div>
     </div>
-    @include('admin.platform.modal')
 @endsection
+@include('admin.platform.modal')
 
 @push('js')
     <script src="{{ asset('black/js/jquery.dataTables.min.js') }}"></script>
@@ -204,14 +204,13 @@
             if (bolAccount != null) {
                 bolAccount = JSON.parse(bolAccount);
             }
-            var accountLogo = btn.getAttribute('data-logo');
-            var emailLogo = btn.getAttribute('data-email-logo');
+            var logo = btn.getAttribute('data-logo');
             $(this).find('form').attr('action', action);
             $(this).find('form').attr('method', method);
             if (isCreate == 1) {
                 $(this).find('button[type="reset"]').click();
             } else {
-                document.getElementById('image-input-wrapper-1').style.backgroundImage = "url(" + accountLogo + ")";
+                document.getElementById('image-input-wrapper-1').style.backgroundImage = "url(" + logo + ")";
                 $('#name').val(bolAccount.name);
             }
 
