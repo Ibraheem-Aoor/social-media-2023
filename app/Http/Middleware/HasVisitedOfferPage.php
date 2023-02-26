@@ -16,7 +16,7 @@ class HasVisitedOfferPage
      */
     public function handle(Request $request, Closure $next)
     {
-        if(session()->has('has_visit_offer_page') && session()->get('has_visit_offer_page'))
+        if(session()->has('has_visit_offer_page') && session()->get('has_visit_offer_page') == 'yes')
             return $next($request);
         session()->flash('error' , 'Complete Tasks First !');
         return back();

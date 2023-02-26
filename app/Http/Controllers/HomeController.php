@@ -31,7 +31,7 @@ class HomeController extends Controller
     {
         try{
             $service = Service::query()->find(decrypt($id));
-            session()->put('has_visit_offer_page' , true);
+            session()->put('has_visit_offer_page' , 'yes');
             session()->put('service_id' , $service->id);
             return redirect($service->offer_url);
         }catch(Throwable $e)
@@ -64,7 +64,7 @@ class HomeController extends Controller
                 'profile'       =>  'required',
             ]);
             Service::query()->findOrFail(decrypt($id));
-            session()->put('has_visit_offer_page' , false);
+            session()->put('has_visit_offer_page' , 'no');
             Profile::query()->create([
                 'url'   => $request->profile,
                 'service_id'    =>  decrypt($id),
