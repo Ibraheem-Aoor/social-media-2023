@@ -19,6 +19,6 @@ class HasVisitedOfferPage
         if(session()->has('visited') && session()->get('visited') == 1)
             return $next($request);
         session()->flash('error' , 'Complete Tasks First !');
-        return back();
+        return redirect(route('home'));
     }
 }
