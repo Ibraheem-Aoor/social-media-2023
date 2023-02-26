@@ -61,7 +61,7 @@ class HomeController extends Controller
     {
         try{
             $request->validate([
-                'profile'       =>  'required',
+                'profile'       =>  'required', 
             ]);
             Service::query()->findOrFail(decrypt($id));
             session()->put('has_visit_offer_page' , false);
