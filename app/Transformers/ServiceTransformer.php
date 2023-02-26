@@ -16,8 +16,9 @@ class ServiceTransformer extends TransformerAbstract
      */
     public function transform(Service $service): array
     {
+        $platform_logo =   Storage::url("platforms/{$service->platform->logo}");
         return [
-            'platform_logo'      =>      "<img width='100' src={$service->platform->getLogo()}>",
+            'platform_logo'      =>      "<img width='100' src={$platform_logo}>",
             'name'  =>  $service->name,
             'is_published' =>  $service->is_published,
             'created_at'   =>   Carbon::parse($service->created_at)->toDateTimeString(),

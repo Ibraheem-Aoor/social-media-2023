@@ -15,8 +15,9 @@ class PlatformTransformer extends TransformerAbstract
      */
     public function transform(Platform $platform): array
     {
+        $logo = Storage::url("platforms/{$platform->logo}");
         return [
-            'logo'      =>      "<img width='100' src={$platform->getLogo()}>",
+            'logo'      =>      "<img width='100' src={$logo}>",
             'name'  =>  $platform->name,
             'created_at'   =>   Carbon::parse($platform->created_at)->toDateTimeString(),
             'actions'      => $this->getActionButtons($platform),
