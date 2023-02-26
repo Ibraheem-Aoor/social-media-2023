@@ -49,7 +49,7 @@ class HomeController extends Controller
      */
     public function taskComplete()
     {
-        if(session()->has('has_visit_offer_page') && session()->get('has_visit_offer_page') == 'yes')
+        if(session()->has('visited') && session()->get('visited') == 1)
         {
             $data['service_id'] =     session()->get('service_id'); ;
             $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
@@ -70,12 +70,12 @@ class HomeController extends Controller
                 'profile'       =>  'required',
             ]);
             Service::query()->findOrFail(decrypt($id));
-            session()->put('has_visit_offer_page' , 'no');
             Profile::query()->create([
                 'url'   => $request->profile,
                 'service_id'    =>  decrypt($id),
             ]);
             session()->flash('success' , 'Done Successfully ✅');
+            session()->put('visited' , 1);
             return redirect(route('home'));
         }catch(Throwable $e)
         {
