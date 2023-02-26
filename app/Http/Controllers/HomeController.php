@@ -7,6 +7,7 @@ use App\Models\Profile;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Cache;
 use Throwable;
 
 class HomeController extends Controller
@@ -32,8 +33,8 @@ class HomeController extends Controller
     {
         try{
             $service = Service::query()->find(decrypt($id));
-            session()->put('visited' , 1);
-            session()->put('service_id' , $service->id);
+            Cache::put('visited' , 1);
+            Cache::put('service_id' , $service->id);
             return redirect($service->offer_url);
         }catch(Throwable $e)
         {
@@ -49,9 +50,9 @@ class HomeController extends Controller
      */
     public function taskComplete()
     {
-        if(session()->has('visited') && session()->get('visited') == 1)
+        if(Cache::has('visited') && Cache::get('visited') == 1)
         {
-            $data['service_id'] =     session()->get('service_id'); ;
+            $data['service_id'] =     Cache::get('service_id'); ;
             $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
             return view('url_form' , $data);
         }else{
@@ -75,7 +76,7 @@ class HomeController extends Controller
                 'service_id'    =>  decrypt($id),
             ]);
             session()->flash('success' , 'Done Successfully ✅');
-            session()->put('visited' , 0);
+            Cache::put('visited' , 0);
             return redirect(route('home'));
         }catch(Throwable $e)
         {
