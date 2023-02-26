@@ -15,7 +15,7 @@ class PlatformTransformer extends TransformerAbstract
      */
     public function transform(Platform $platform): array
     {
-        $logo = Storage::url("platforms/{$platform->logo}");
+        $logo = asset("storage/platforms/{$platform->logo}");
         return [
             'logo'      =>      "<img width='100' src={$logo}>",
             'name'  =>  $platform->name,
