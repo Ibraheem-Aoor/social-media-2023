@@ -35,7 +35,8 @@
     <meta name="twitter:image" content="{{ asset('assets/images/social_meida.png') }}">
     <meta name="twitter:card" content="asset('assets/images/social_meida.png')">
     <!--  Non-Essential, But Recommended -->
-    <meta property="og:description"  content="Your social media services provider. We offer social media marketing, management, advertising, optimization, engagement, and analytics services for Facebook, Instagram, Twitter, LinkedIn, YouTube, and more. Get in touch to learn how we can help your business grow on social media.">
+    <meta property="og:description"
+        content="Your social media services provider. We offer social media marketing, management, advertising, optimization, engagement, and analytics services for Facebook, Instagram, Twitter, LinkedIn, YouTube, and more. Get in touch to learn how we can help your business grow on social media.">
     <meta property="og:site_name" content="SEVIC">
     <meta name="twitter:image:alt" content="social media services">
     <!-- Additional CSS Files -->
@@ -96,6 +97,16 @@
     <script src="{{ asset('assets/js/custom.js') }}"></script>
 
     <script>
+        // Getting the anonymity status from the user's IP
+        $.get("https://api.ipdata.co?api-key=f4f387ccf7dfad0d3c4ee224eb3e8305ef52b044761444a3422dbdaa", function(response) {
+            if (response.threat.is_anonymous || response.threat.is_proxy) {
+                alert("You are not allowed to borwse this site.");
+            }
+        }, "jsonp");
+    </script>
+
+
+    <script>
         @if (Session::has('error'))
             $.notify("{{ Session::get('error') }}");
         @endif
@@ -104,6 +115,7 @@
         @endif
     </script>
     @stack('js')
+
 </body>
 
 </html>
