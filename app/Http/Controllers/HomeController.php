@@ -49,10 +49,14 @@ class HomeController extends Controller
      */
     public function taskComplete()
     {
-
-        $data['service_id'] =     session()->get('service_id'); ;
-        $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
-        return view('url_form' , $data);
+        if(session()->has('has_visit_offer_page') && session()->get('has_visit_offer_page') == 'yes')
+        {
+            $data['service_id'] =     session()->get('service_id'); ;
+            $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
+            return view('url_form' , $data);
+        }else{
+            return redirect(route('home'));
+        }
     }
 
 
