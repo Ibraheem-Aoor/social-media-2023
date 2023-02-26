@@ -4,6 +4,7 @@ return
     'sidebar'   =>[
         'platforms'      =>  'المنصات',
         'services'          =>          'الخدمات',
+        'profiles'          =>          'بروفايلات المستخدمين',
     ],
 
     'name'      =>  'الاسم',
@@ -54,6 +55,8 @@ return
     'inactive'        =>  'غير مفعل',
     'features'        =>  'المميزات',
     'offer_url'     =>  'رابط صفحة العروض',
+    'profile'          =>          'بروفايل',
+    'service'          =>          'الخدمة',
 ];
 
 

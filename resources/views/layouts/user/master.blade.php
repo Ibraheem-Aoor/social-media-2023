@@ -73,7 +73,7 @@
     <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
 
     <script src="{{ asset('assets/js/custom.js') }}"></script>
-
+   
     <script>
         @if (Session::has('error'))
             $.notify("{{ Session::get('error') }}");

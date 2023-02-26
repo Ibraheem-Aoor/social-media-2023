@@ -7,6 +7,16 @@
         <ul class="nav">
 
 
+            {{-- START Users Profile  --}}
+            <li @if ($pageSlug == 'platforms') class="active" @endif>
+                <a href="{{ route('admin.user_profile') }}">
+                    <i class="tim-icons icon-app"></i>
+                    <p>{{ __('custom.sidebar.profiles') }}</p>
+                </a>
+            </li>
+            {{-- END Users Profile  --}}
+
+
             {{-- START Products  --}}
             <li @if ($pageSlug == 'platforms') class="active" @endif>
                 <a href="{{ route('admin.platform.index') }}">
