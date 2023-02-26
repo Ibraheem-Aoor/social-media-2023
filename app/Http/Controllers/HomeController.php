@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
         try{
             $service = Service::query()->find(decrypt($id));
-            session()->put('has_visit_offer_page' , 'yes');
+            session()->put('visited' , 1);
             session()->put('service_id' , $service->id);
             return redirect($service->offer_url);
         }catch(Throwable $e)
@@ -75,7 +75,7 @@ class HomeController extends Controller
                 'service_id'    =>  decrypt($id),
             ]);
             session()->flash('success' , 'Done Successfully ✅');
-            session()->put('visited' , 1);
+            session()->put('visited' , 0);
             return redirect(route('home'));
         }catch(Throwable $e)
         {
