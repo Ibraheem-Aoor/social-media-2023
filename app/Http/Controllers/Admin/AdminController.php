@@ -18,6 +18,10 @@ class AdminController extends Controller
     }
 
 
+    /**
+     * users profile  url
+     */
+
     public function userProfiles()
     {
         $data['table_data_url'] =   route('admin.user_profile.table_data');
