@@ -16,7 +16,7 @@ class ServiceTransformer extends TransformerAbstract
      */
     public function transform(Service $service): array
     {
-        $platform_logo = Storage::url("platforms/{$service->platform->logo}");
+        $platform_logo = Storage::url("platforms/{$service->platform?->logo}");
         return [
             'platform_logo'      =>      "<img width='100' src={$platform_logo}>",
             'name'  =>  $service->name,

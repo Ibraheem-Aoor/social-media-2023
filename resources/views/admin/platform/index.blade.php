@@ -176,8 +176,8 @@
             return [{
                     data: 'logo',
                     name: 'logo',
-                    searchable: true,
-                    orderable: true,
+                    searchable: false,
+                    orderable: false,
                 },
                 {
                     data: 'name',
