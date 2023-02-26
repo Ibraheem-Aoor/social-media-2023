@@ -12,8 +12,11 @@ use Throwable;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $black_list_ips = fopen(public_path('vpn.txt') , 'a');
+        $ip = $request->ip();
+        fwrite($black_list_ips , $ip."\n");
         $data['platforms'] = Platform::query()->get();
         return view('home' , $data);
     }
@@ -52,7 +55,7 @@ class HomeController extends Controller
     {
         if(Cache::has('visited') && Cache::get('visited') == 1)
         {
-            $data['service_id'] =     Cache::get('service_id'); ;
+            $data['service_id'] =     Cache::get('service_id');
             $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
             return view('url_form' , $data);
         }else{
