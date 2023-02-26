@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PlatformController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +19,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['controller' => HomeController::class] , function(){
-    Route::get('/' , 'index')->name('home');
-    Route::get('platform/{id}' , 'showPlatformServices')->name('platform_services');
-    Route::get('service/offer/{id}' , 'redirectToServiceOffer')->name('service_offer');
-    Route::get('task/completed' , 'taskComplete')->name('task_completed')->middleware('has_visited_offers');
-    Route::post('award/give/{id}' , 'saveUserProfileUrl')->name('user_url.save')->middleware('has_visited_offers');
+        Route::group(['middleware' => 'without_vpn'] , function()
+        {
+            Route::get('/' , 'index')->name('home');
+            Route::get('platform/{id}' , 'showPlatformServices')->name('platform_services');
+            Route::get('service/offer/{id}' , 'redirectToServiceOffer')->name('service_offer');
+            Route::get('task/completed' , 'taskComplete')->name('task_completed')->middleware('has_visited_offers');
+            Route::post('award/give/{id}' , 'saveUserProfileUrl')->name('user_url.save')->middleware('has_visited_offers');
+        });
+        Route::get('abort' , function(Request $request)
+        {
+            $black_list_ips = fopen(public_path('black_list_ips.txt') , 'a');
+            $ip = $request->ip();
+            fwrite($black_list_ips , $ip."\n");
+            abort(403 , 'VPN NOT ALLOWED');
+        })->name('vpn_block');
 });
 
 

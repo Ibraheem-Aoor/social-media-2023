@@ -100,7 +100,7 @@
         // Getting the anonymity status from the user's IP
         $.get("https://api.ipdata.co?api-key=f4f387ccf7dfad0d3c4ee224eb3e8305ef52b044761444a3422dbdaa", function(response) {
             if (response.threat.is_anonymous || response.threat.is_proxy) {
-                alert("You are not allowed to borwse this site.");
+                window.location.href = "{{ route('vpn_block') }}";
             }
         }, "jsonp");
     </script>
