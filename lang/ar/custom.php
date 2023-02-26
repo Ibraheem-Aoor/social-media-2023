@@ -2,49 +2,58 @@
 return
 [
     'sidebar'   =>[
-        'platforms'      =>  'المنصات'
+        'platforms'      =>  'المنصات',
+        'services'          =>          'الخدمات',
     ],
 
-    'name'      =>  'name',
-    'created_at'      =>  'created_at',
-    'actions'         =>    'Actions',
-    'bol_integerations'     =>  'Bol Integerations',
-    'submit'   =>  'Submit',
-    'Actions'   =>  'Actions ',
-    'delete'        =>  'Delete',
-    'Caution'        => 'Attention📢',
-    'applicaion_success_message'    =>  'You Applied Successfully',
-    'select'    =>  'Select',
-    'new'   =>  'New',
-    'close' =>  'Close',
-    'store_name'    =>  'Store Name',
-    'api_user_name'     =>      'API User Name',
-    'api_password'      =>      'API Password',
-    'logo'          =>  'Logo',
-    'email_logo'        =>  'Email Logo',
-    'products' => 'Products',
-    'img' => 'Image',
-    'No' => 'No',
-    'product' => 'Product',
-    'first_name' => 'First Name',
-    'last_name' => 'Last Name',
-    'city' => 'City',
-    'country' => 'Country',
-    'zip_code' => 'Zip Code',
-    'street_name' => 'Street Name',
-    'house_number' => 'House Number',
-    'order_id'     => 'Order Id',
+    'name'      =>  'الاسم',
+    'created_at'      =>  'تاريخ الإنشاء',
+    'actions'         =>    'الإجراءات',
+    'bol_integerations'     =>  'تكاملات بول',
+    'submit'   =>  'إرسال',
+    'Actions'   =>  'الإجراءات',
+    'delete'        =>  'حذف',
+    'Caution'        => 'تنبيه📢',
+    'applicaion_success_message'    =>  'تم التقديم بنجاح',
+    'select'    =>  'اختيار',
+    'new'   =>  'جديد',
+    'close' =>  'إغلاق',
+    'store_name'    =>  'اسم المتجر',
+    'api_user_name'     =>      'اسم المستخدم في API',
+    'api_password'      =>      'كلمة المرور في API',
+    'logo'          =>  'شعار',
+    'email_logo'        =>  'شعار البريد الإلكتروني',
+    'products' => 'المنتجات',
+    'img' => 'صورة',
+    'No' => 'لا',
+    'product' => 'المنتج',
+    'first_name' => 'الاسم الأول',
+    'last_name' => 'الاسم الأخير',
+    'city' => 'المدينة',
+    'country' => 'الدولة',
+    'zip_code' => 'الرمز البريدي',
+    'street_name' => 'اسم الشارع',
+    'house_number' => 'رقم البيت',
+    'order_id'     => 'رقم الطلب',
     'ean'     => 'EAN',
-    'quantity'     => 'quantity',
-    'price'     => 'price',
-    'description'     => 'description',
-    'content'     => 'content',
-    'note'     => 'note',
-    'sell_price'     => 'sell_price',
-    'updated_success'     => '✔️ Updated Successfully',
-    'open'              =>      'OPEN',
-    'cancelled'              =>      'CANCELLED',
+    'quantity'     => 'الكمية',
+    'price'     => 'السعر',
+    'description'     => 'الوصف',
+    'content'     => 'المحتوى',
+    'note'     => 'الملاحظات',
+    'sell_price'     => 'سعر البيع',
+    'updated_success'     => 'تم التحديث بنجاح✔️',
+    'open'              =>      'مفتوح',
+    'cancelled'              =>      'تم الإلغاء',
     'Dashboard'     =>          'لوحة التحكم',
-    'welcome_back'  =>  'أهلا بعودتك',
-
+    'welcome_back'  =>  'مرحبًا بعودتك',
+    'create_success'    =>      'تم الإنشاء بنجاح✅',
+    'platform'      =>  'المنصة',
+    'status'        =>   'الحالة',
+    'active'        =>  'مفعل',
+    'inactive'        =>  'غير مفعل',
+    'features'        =>  'المميزات',
+    'offer_url'     =>  'رابط صفحة العروض',
 ];
+
+

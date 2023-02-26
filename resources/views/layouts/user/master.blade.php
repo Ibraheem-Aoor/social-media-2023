@@ -70,8 +70,18 @@
     <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
     <script src="{{ asset('assets/js/animation.js') }}"></script>
     <script src="{{ asset('assets/js/imagesloaded.js') }}"></script>
+    <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
+
     <script src="{{ asset('assets/js/custom.js') }}"></script>
 
+    <script>
+        @if (Session::has('error'))
+            $.notify("{{ Session::get('error') }}");
+        @endif
+        @if (Session::has('success'))
+            $.notify("{{ Session::get('success') }}");
+        @endif
+    </script>
     @stack('js')
 </body>
 

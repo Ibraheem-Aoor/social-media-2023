@@ -35,6 +35,14 @@
         textarea {
             border: 1px solid #2b3553 !important;
         }
+
+        .text-dark {
+            color: #000 !important;
+        }
+
+        th {
+            text-align: right !important;
+        }
     </style>
     @stack('css')
 </head>
@@ -106,6 +114,11 @@
     <script src="{{ asset('black') }}/js/black-dashboard.min.js?v=1.0.0"></script>
     <script src="{{ asset('black') }}/js/theme.js"></script>
 
+    <script>
+        @if (Session::has('error'))
+            $.notify("{{ Session::get('error') }}");
+        @endif
+    </script>
 
     <script>
         $(document).ready(function() {

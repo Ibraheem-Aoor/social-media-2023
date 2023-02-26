@@ -89,7 +89,7 @@
         <div class="col-md-12">
             <div class="card  card-plain">
                 <div class="card-header">
-                    <h4 class="card-title">{{ __('custom.bol_integerations') }}</h4>
+                    <h4 class="card-title">{{ __('custom.sidebar.platforms') }}</h4>
                     <p class="category"><button class="btn btn-outline-info" data-toggle="modal"
                             data-target="#platform-create-update-modal" data-action="{{ route('admin.platform.store') }}"
                             data-method="POST" data-is-create="1"><i class="fa fa-plus"></i></button></p>
@@ -104,6 +104,9 @@
                                     </th>
                                     <th>
                                         {{ __('custom.name') }}
+                                    </th>
+                                    <th>
+                                        {{ __('custom.created_at') }}
                                     </th>
                                     <th>
                                         {{ __('custom.actions') }}
@@ -163,6 +166,7 @@
             $('#myTable').DataTable({
                 processing: true,
                 serverSide: true,
+                order: [[2 , 'desc']],
                 ajax: table_data_url,
                 columns: getTableColumns(),
             });
@@ -178,6 +182,12 @@
                 {
                     data: 'name',
                     name: 'name',
+                    searchable: true,
+                    orderable: true,
+                },
+                {
+                    data: 'created_at',
+                    name: 'created_at',
                     searchable: true,
                     orderable: true,
                 },

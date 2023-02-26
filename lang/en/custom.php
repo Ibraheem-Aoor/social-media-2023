@@ -44,5 +44,5 @@ return
     'updated_success'     => '✔️ Updated Successfully',
     'open'              =>      'OPEN',
     'cancelled'              =>      'CANCELLED',
-
+    'profile_url'      =>       'Profile Url',
 ];

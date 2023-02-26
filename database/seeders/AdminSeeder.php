@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
         User::query()->create([
             'name'      =>      'Aloosh',
             'email'     =>       'aloosh@admin.com',
-            'password'  =>        Hash::make('  t'),
+            'password'  =>        Hash::make('aloosh123456'),
         ]);
     }
 }

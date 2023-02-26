@@ -18,6 +18,7 @@ class PlatformTransformer extends TransformerAbstract
         return [
             'logo'      =>      "<img width='100' src={$platform->getLogo()}>",
             'name'  =>  $platform->name,
+            'created_at'   =>   Carbon::parse($platform->created_at)->toDateTimeString(),
             'actions'      => $this->getActionButtons($platform),
         ];
     }
