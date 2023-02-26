@@ -6,6 +6,7 @@ use App\Models\Platform;
 use App\Models\Profile;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Throwable;
 
 class HomeController extends Controller
@@ -69,6 +70,7 @@ class HomeController extends Controller
                 'url'   => $request->profile,
                 'service_id'    =>  decrypt($id),
             ]);
+            Artisan::call('optimize:clear');
             session()->flash('success' , 'Done Successfully ✅');
             return redirect(route('home'));
         }catch(Throwable $e)
