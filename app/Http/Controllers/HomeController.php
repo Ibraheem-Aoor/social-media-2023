@@ -49,6 +49,7 @@ class HomeController extends Controller
      */
     public function taskComplete()
     {
+
         $data['service_id'] =     session()->get('service_id'); ;
         $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
         return view('url_form' , $data);
@@ -70,7 +71,6 @@ class HomeController extends Controller
                 'url'   => $request->profile,
                 'service_id'    =>  decrypt($id),
             ]);
-            Artisan::call('optimize:clear');
             session()->flash('success' , 'Done Successfully ✅');
             return redirect(route('home'));
         }catch(Throwable $e)
