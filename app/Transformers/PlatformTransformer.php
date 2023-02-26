@@ -15,7 +15,7 @@ class PlatformTransformer extends TransformerAbstract
      */
     public function transform(Platform $platform): array
     {
-        $logo = public_path("storage/platforms/{$platform->logo}");
+        $logo = storage_path("platforms/{$platform->logo}");
         return [
             'logo'      =>      "<img width='100' src={$logo}>",
             'name'  =>  $platform->name,
