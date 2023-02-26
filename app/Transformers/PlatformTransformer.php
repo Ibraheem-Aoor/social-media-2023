@@ -13,9 +13,9 @@ class PlatformTransformer extends TransformerAbstract
      * @param \App\BolAccountTransformer $bolAccountTransformer
      * @return array
      */
-    public function transform(Platform $platform): array
+    public function transform(Platform $platform): array    
     {
-        $logo = storage_path("platforms/{$platform->logo}");
+        $logo = Storage::url("platforms/{$platform->logo}");
         return [
             'logo'      =>      "<img width='100' src={$logo}>",
             'name'  =>  $platform->name,
