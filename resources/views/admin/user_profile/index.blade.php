@@ -104,8 +104,8 @@
                 {
                     data: 'actions',
                     name: 'actions',
-                    searchable: true,
-                    orderable: true,
+                    searchable: false,
+                    orderable: false,
                 },
             ];
         }

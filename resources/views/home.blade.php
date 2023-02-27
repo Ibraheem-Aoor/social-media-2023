@@ -227,6 +227,8 @@
                     <div class="section-heading wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
                         <h6>Our Services</h6>
                         <h2>Discover Our Recent <em>Services</em> For <span>Social Media Platforms</span></h2>
+                        <h3 class="text-danger">Important📢</h3>
+                        <h4 class="text-danger">Using VPN Is not allowed..Your tasks will not be counted when using VPN</h4>
                     </div>
                 </div>
             </div>
