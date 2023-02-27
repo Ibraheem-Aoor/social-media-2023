@@ -1,6 +1,11 @@
 @extends('layouts.admin.master', ['page' => __('custom.paltforms'), 'pageSlug' => 'platforms'])
 @push('css')
     <link rel="stylesheet" href="{{ asset('black/css/jquery.dataTables.min.css') }}">
+    <style>
+        textarea{
+            color: #000 !important;
+        }
+    </style>
 @endpush
 @section('content')
     <div class="row">
@@ -134,6 +139,7 @@
                 $('#is_published').val(service.is_published);
                 $('#platform_id').val(service.platform_id);
                 $('#offer_url').val(service.offer_url);
+                $('#task_title').text(service.task_title);
                 if (service_features.length > 0) {
                     var html = ``;
                     $.each(service_features, function(key, value) {

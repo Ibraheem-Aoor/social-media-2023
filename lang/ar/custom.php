@@ -61,6 +61,7 @@ return
     'service'          =>          'الخدمة',
     'profiles_uncompleted'  =>      'الطلبات الغير مكتملة',
     'profiles_completed'  =>      'الطلبات مكتملة',
+    'task_title'        =>              'النص الظاهر في صفحة اكتمال المهمة',
 ];
 
 

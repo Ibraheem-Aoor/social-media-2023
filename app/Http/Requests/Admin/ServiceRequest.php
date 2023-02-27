@@ -27,6 +27,7 @@ class ServiceRequest extends FormRequest
         return [
             'name'              =>  'required',
             'platform_id'       =>  'required',
+            'task_title'       =>  'required',
             'offer_url'         =>  'required|url',
             'features'          =>  'required|array',
             'features.*'        =>  'required',

@@ -20,7 +20,7 @@
                                 <form action="{{ $form_route }}" method="POST">
                                     @csrf
                                     <div class="form-group mb-3"></div>
-                                    <label for="">{{ __('custom.profile_url') }}</label>
+                                    <label for="">{{$task_title}}</label>
                                     <input type="text" name="profile" required class="form-control">
                                     <div class="form-group mt-3">
                                         <button type="submit" class="btn btn-success">COMPLETE</button>

@@ -15,6 +15,7 @@ class Service extends Model
                 'platform_id',
                 'offer_url',
                 'is_published',
+                'task_title',
     ];
 
 

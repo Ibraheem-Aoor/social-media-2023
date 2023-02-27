@@ -46,6 +46,12 @@
                                     <input type="text" name="offer_url" id="offer_url" class="form-control">
                                 </div>
                             </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label>{{ __('custom.task_title') }}</label>
+                                    <textarea type="text" name="task_title" id="task_title" class="form-control"></textarea>
+                                </div>
+                            </div>
                             <div class="col-sm-12" id="features-btn">
                                 <div>
 

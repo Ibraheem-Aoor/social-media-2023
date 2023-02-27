@@ -15,6 +15,8 @@
                           <li class="scroll-to-section"><a href="{{Route::currentRouteName() == 'home' ? '#features' : '/'}}">How It Work</a></li>
                           <li class="scroll-to-section"><a href="{{Route::currentRouteName() == 'home' ? '#about' : '/'}}">About Us</a></li>
                           <li class="scroll-to-section"><a href="{{Route::currentRouteName() == 'home' ? '#services' : '/'}}">Services</a></li>
+                          <li class="scroll-to-section"><a href="mailto:support@speedrequest.net"><i class="fa fa-envelope"></i> support@speedrequest.net</a></li>
+                          <li class="scroll-to-section"></li>
                       </ul>
                       <a class='menu-trigger'>
                           <span>Menu</span>

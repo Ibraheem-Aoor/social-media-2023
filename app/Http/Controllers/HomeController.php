@@ -80,6 +80,7 @@ class HomeController extends Controller
         {
             $data['service_id'] =     $temp_user->service_id;
             $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
+            $data['task_title'] = Service::query()->find($temp_user->service_id)?->task_title;
             return view('url_form' , $data);
         }else{
             return redirect(route('home'));
