@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Session;
+use App\Models\TempUser;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -17,7 +19,8 @@ class HasVisitedOfferPage
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Cache::has('visited') && Cache::get('visited') == 1)
+        $temp_user = TempUser::find(session()->get('database_session_id'));
+        if($temp_user->visited)
             return $next($request);
         session()->flash('error' , 'Complete Tasks First !');
         return redirect(route('home'));
