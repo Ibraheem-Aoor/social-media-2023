@@ -50,6 +50,7 @@ Route::group(['prefix' => 'backoffice'] , function()
     Route::group(['middleware' => 'auth' ,  'as' => 'admin.' ,]  , function(){
         Route::get('dashboard' , [ AdminController::class  , 'dashboard'] )->name('.dashboard');
         Route::get('user-profile' , [ AdminController::class  , 'userProfiles'] )->name('user_profile');
+        Route::delete('user-profile/{id}' , [ AdminController::class  , 'updateUserProfile'] )->name('profile_update');
         Route::get('user-profile-table-data' , [ AdminController::class  , 'getUserProfileTableData'] )->name('user_profile.table_data');
         // platform
         Route::resource('platform', PlatformController::class);

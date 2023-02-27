@@ -29,6 +29,9 @@
                                     <th>
                                         {{ __('custom.created_at') }}
                                     </th>
+                                    <th>
+                                        {{ __('custom.actions') }}
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,6 +44,7 @@
         </div>
     </div>
 @endsection
+@include('admin.user_profile.modal')
 
 @push('js')
     <script src="{{ asset('black/js/jquery.dataTables.min.js') }}"></script>
@@ -97,7 +101,46 @@
                     searchable: true,
                     orderable: true,
                 },
+                {
+                    data: 'actions',
+                    name: 'actions',
+                    searchable: true,
+                    orderable: true,
+                },
             ];
         }
+
+        /* ##############  START DELETE FORM  ##########*/
+        $('#profile-update-modal').on('show.bs.modal', function(e) {
+            var btn = e.relatedTarget;
+            var deleteUrl = btn.getAttribute('data-delete-url');
+            var message = btn.getAttribute('data-message');
+            var name = btn.getAttribute('data-name');
+            var modalForm = $(this).find('form[name="confirm-delete-form"]');
+            modalForm.attr('action', deleteUrl);
+            modalForm.attr('method', 'DELETE');
+            $(this).find('.modal-body p').text(message + "\t" + name);
+        });
+        //Handle delete confirmation form
+        $(document).on('submit', 'form[name="confirm-delete-form"]', function(e) {
+            e.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: {},
+                success: function(response) {
+                    if (response.is_deleted) {
+                        $.notify(response.message);
+                        $('#row-' + response.row).parent().parent().remove();
+                        $('#profile-update-modal').modal('hide');
+                    } else {
+                        $.notify(response.message, "error");
+                    }
+                },
+                error: function(response) {
+                    $.notify(response.message, "error");
+                }
+            });
+        });
     </script>
 @endpush
