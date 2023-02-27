@@ -80,7 +80,6 @@ class HomeController extends Controller
         {
             $data['service_id'] =     $temp_user->service_id;
             $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
-            session()->put('has_visited' ,  0);
             return view('url_form' , $data);
         }else{
             return redirect(route('home'));
@@ -105,6 +104,7 @@ class HomeController extends Controller
             $temp_user = TempUser::find(session()->get('database_session_id'));
             session()->forget('database_session_id');
             session()->flush();
+            session()->put('has_visited' ,  0);
             $temp_user->delete();
             return redirect(route('home' , ['create_new' => true]))->with('success' , 'Done Successfully ✅');
         }catch(Throwable $e)
