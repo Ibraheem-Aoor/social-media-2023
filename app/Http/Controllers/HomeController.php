@@ -76,7 +76,7 @@ class HomeController extends Controller
     public function taskComplete()
     {
         $temp_user = TempUser::find(session()->get('database_session_id'));
-        if(@$temp_user->visited)
+        if(@$temp_user->visited && session()->has('has_visited') && session()->get('has_visited') == 1)
         {
             $data['service_id'] =     $temp_user->service_id;
             $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
