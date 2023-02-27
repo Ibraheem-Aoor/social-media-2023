@@ -16,3 +16,5 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/public/vpn.txt
+/public/black_list_ips.txt
