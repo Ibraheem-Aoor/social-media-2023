@@ -20,8 +20,11 @@ class HasVisitedOfferPage
     public function handle(Request $request, Closure $next)
     {
         $temp_user = TempUser::find(session()->get('database_session_id'));
+        dd($temp_user->visited);
         if($temp_user->visited)
+        {
             return $next($request);
+        }
         session()->flash('error' , 'Complete Tasks First !');
         return redirect(route('home'));
     }
