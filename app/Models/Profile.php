@@ -10,7 +10,7 @@ class Profile extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['url' , 'service_id'];
+    protected $fillable = ['url' , 'service_id' , 'status'];
 
 
     public function service() : BelongsTo

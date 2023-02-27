@@ -57,11 +57,12 @@ class HomeController extends Controller
             $temp_user = TempUser::find(session()->get('database_session_id'));
             $temp_user->visited = true;
             $temp_user->service_id = $service->id;
+            session()->put('has_visited' ,  1);
             $temp_user->save();
             return redirect($service->offer_url);
         }catch(Throwable $e)
         {
-            dd($e);
+            // dd($e);
             session()->flash('error' , 'Something Went Wrong');
             return redirect()->back();
         }
@@ -79,6 +80,7 @@ class HomeController extends Controller
         {
             $data['service_id'] =     $temp_user->service_id;
             $data['form_route'] =   route("user_url.save" , encrypt($data['service_id']));
+            session()->put('has_visited' ,  0);
             return view('url_form' , $data);
         }else{
             return redirect(route('home'));
