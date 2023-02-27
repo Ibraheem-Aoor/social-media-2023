@@ -16,7 +16,15 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        if(!session()->has('database_session_id'))
+        if($request->query('create_new'))
+        {
+            $database_session = TempUser::query()->create([
+                'ip_address'        =>  $request->ip(),
+                'visited'        =>  false,
+            ]);
+            session()->put('database_session_id'  , $database_session->id);
+        }
+        elseif(!session()->get('database_session_id'))
         {
             $database_session = TempUser::query()->create([
                 'ip_address'        =>  $request->ip(),
@@ -96,7 +104,7 @@ class HomeController extends Controller
             session()->forget('database_session_id');
             session()->flush();
             $temp_user->delete();
-            return redirect(route('home'))->with('success' , 'Done Successfully ✅');
+            return redirect(route('home' , ['create_new' => true]))->with('success' , 'Done Successfully ✅');
         }catch(Throwable $e)
         {
             session()->flash('error'  , 'something went wrong');
