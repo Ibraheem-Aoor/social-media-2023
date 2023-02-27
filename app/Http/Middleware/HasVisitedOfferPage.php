@@ -19,7 +19,6 @@ class HasVisitedOfferPage
      */
     public function handle(Request $request, Closure $next)
     {
-        dd('SSSS');
         $temp_user = TempUser::find(session()->get('database_session_id'));
         if($temp_user->visited)
             return $next($request);
