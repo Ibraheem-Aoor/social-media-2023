@@ -19,13 +19,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['controller' => HomeController::class] , function(){
-        Route::get('/' , 'index')->name('home');
-        Route::get('platform/{id}' , 'showPlatformServices')->name('platform_services');
-        Route::get('service/offer/{id}' , 'redirectToServiceOffer')->name('service_offer');
-        Route::group(['middleware' => 'has_visited_offers'] , function()
+        Route::group(['middleware' => 'without_vpn'] , function()
         {
-            Route::get('task/completed' , 'taskComplete')->name('task_completed');
-            Route::post('award/give/{id}' , 'saveUserProfileUrl')->name('user_url.save');
+            Route::get('/' , 'index')->name('home');
+            Route::get('platform/{id}' , 'showPlatformServices')->name('platform_services');
+            Route::get('service/offer/{id}' , 'redirectToServiceOffer')->name('service_offer');
+            Route::group(['middleware' => 'has_visited_offers'] , function()
+            {
+                Route::get('task/completed' , 'taskComplete')->name('task_completed');
+                Route::post('award/give/{id}' , 'saveUserProfileUrl')->name('user_url.save');
+            });
         });
         Route::get('abort' , function(Request $request)
         {
