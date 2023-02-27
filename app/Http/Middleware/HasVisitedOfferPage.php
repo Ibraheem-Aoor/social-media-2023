@@ -20,7 +20,7 @@ class HasVisitedOfferPage
     public function handle(Request $request, Closure $next)
     {
         $temp_user = TempUser::find($request->session()->get('database_session_id'));
-        if($temp_user->visited)
+        if($temp_user != null &&  $temp_user->visited)
         {
             return $next($request);
         }
