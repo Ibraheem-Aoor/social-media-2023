@@ -92,12 +92,11 @@ class HomeController extends Controller
                 'url'   => $request->profile,
                 'service_id'    =>  decrypt($id),
             ]);
-            session()->flash('success' , 'Done Successfully ✅');
             $temp_user = TempUser::find(session()->get('database_session_id'));
-            $temp_user->visited = false;
-            $temp_user->service_id = null;
-            $temp_user->save();
-            return redirect(route('home'));
+            session()->forget('database_session_id');
+            session()->flush();
+            $temp_user->delete();
+            return redirect(route('home'))->with('success' , 'Done Successfully ✅');
         }catch(Throwable $e)
         {
             session()->flash('error'  , 'something went wrong');
