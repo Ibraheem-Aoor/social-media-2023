@@ -9,9 +9,17 @@
 
             {{-- START Users Profile  --}}
             <li @if ($pageSlug == 'platforms') class="active" @endif>
-                <a href="{{ route('admin.user_profile') }}">
+                <a href="{{ route('admin.user_profile', ['is_completed' => false]) }}">
                     <i class="tim-icons icon-app"></i>
-                    <p>{{ __('custom.sidebar.profiles') }}</p>
+                    <p>{{ __('custom.sidebar.profiles_uncompleted') }}</p>
+                </a>
+            </li>
+            
+            {{-- END Users Profile  --}}
+            <li @if ($pageSlug == 'platforms') class="active" @endif>
+                <a href="{{ route('admin.user_profile', ['is_completed' => true]) }}">
+                    <i class="tim-icons icon-app"></i>
+                    <p>{{ __('custom.sidebar.profiles_completed') }}</p>
                 </a>
             </li>
             {{-- END Users Profile  --}}

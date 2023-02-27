@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('profilles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table) {
             $table->boolean('is_completed')->default(false);
         });
     }
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('profilles', function (Blueprint $table) {
+        Schema::table('profiles', function (Blueprint $table) {
             $table->dropColumn('is_completed');
         });
     }

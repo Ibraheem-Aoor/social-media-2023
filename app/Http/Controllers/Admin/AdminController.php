@@ -22,14 +22,14 @@ class AdminController extends Controller
      * users profile  url
      */
 
-    public function userProfiles()
+    public function userProfiles(Request $request)
     {
-        $data['table_data_url'] =   route('admin.user_profile.table_data');
+        $data['table_data_url'] =   route('admin.user_profile.table_data', ['is_completed' => $request->is_completed]);
         return view('admin.user_profile.index'  , $data);
     }
 
-    public function getUserProfileTableData()
+    public function getUserProfileTableData(Request $request)
     {
-        return DataTables::of(Profile::query()->with('service.platform'))->setTransformer(UserProfileTransfrormer::class)->make(true);
+        return DataTables::of(Profile::query()->with('service.platform')->where('is_completed' , $request->is_completed))->setTransformer(UserProfileTransfrormer::class)->make(true);
     }
 }

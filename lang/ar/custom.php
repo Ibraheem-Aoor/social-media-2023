@@ -5,6 +5,8 @@ return
         'platforms'      =>  'المنصات',
         'services'          =>          'الخدمات',
         'profiles'          =>          'بروفايلات المستخدمين',
+        'profiles_uncompleted'  =>      'الطلبات الغير مكتملة',
+        'profiles_completed'  =>      'الطلبات مكتملة',
     ],
 
     'name'      =>  'الاسم',
@@ -57,6 +59,8 @@ return
     'offer_url'     =>  'رابط صفحة العروض',
     'profile'          =>          'بروفايل',
     'service'          =>          'الخدمة',
+    'profiles_uncompleted'  =>      'الطلبات الغير مكتملة',
+    'profiles_completed'  =>      'الطلبات مكتملة',
 ];
 
 
