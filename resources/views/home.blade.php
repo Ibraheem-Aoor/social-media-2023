@@ -228,7 +228,8 @@
                         <h6>Our Services</h6>
                         <h2>Discover Our Recent <em>Services</em> For <span>Social Media Platforms</span></h2>
                         <h3 class="text-danger">Important📢<br>VPN</h3>
-                        <h4 class="text-danger" style=""> Is not allowed to be used..and if it was used You Will Not Get Your Order. Thanks</h4>
+                        <h4 class="text-danger" style=""> Is not allowed to be used..and if it was used You Will Not
+                            Get Your Order. Thanks</h4>
                     </div>
                 </div>
             </div>
@@ -240,11 +241,11 @@
                         <div class="service-item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                             <div class="row">
                                 <a href="{{ route('platform_services', encrypt($platform->id)) }}">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12 text-center">
                                         <div class="icon">
                                             <img src="{{ $platform->getLogo() }}" alt="">
                                         </div>
-                                        <div class="right-content">
+                                        <div class="right-content text-center" style="margin-top: 5% !important;">
                                             <h4>{{ $platform->name }}</h4>
                                         </div>
                                     </div>
