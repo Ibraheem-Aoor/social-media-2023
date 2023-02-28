@@ -13,7 +13,7 @@ class PlatformTransformer extends TransformerAbstract
      * @param \App\BolAccountTransformer $bolAccountTransformer
      * @return array
      */
-    public function transform(Platform $platform): array    
+    public function transform(Platform $platform): array
     {
         $logo = Storage::url("platforms/{$platform->logo}");
         return [
@@ -28,8 +28,7 @@ class PlatformTransformer extends TransformerAbstract
     public function getActionButtons($platform)
     {
         $logo = $platform->getLogo();
-        return "<button class='btn-xs btn-success'  data-toggle='modal' data-target='#platform-create-update-modal'
-        data-action='".route('admin.platform.custom_updae' , $platform->id)."' data-method='POST'    data-logo='".$logo."'   data-platform='".json_encode($platform)."' data-is-create='false'><i class='fa fa-edit'></i></button>
+        return "
         <button type='button' data-toggle='modal' data-target='#delete-modal' class='btn-xs btn-danger'
         data-delete-url='".route('admin.platform.destroy' , $platform->id)."' data-message='".__('custom.confirm_delete')."' data-name='".$platform->name."' id='row-".$platform->id."'><i class='fa fa-trash'></i></button>
         ";
