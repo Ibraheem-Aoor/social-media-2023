@@ -7,7 +7,7 @@
 
         .custom-li {
             background: #33ccc5 !important;
-            margin-bottom: 1% !important;
+            margin-bottom: 8% !important;
             color: white;
             border-radius: 3%;
         }
