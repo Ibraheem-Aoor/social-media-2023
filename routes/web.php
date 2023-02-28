@@ -71,21 +71,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('test' , function()
 {
-    // Make a cURL request to the ipdata.co VPN API
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://api.ipdata.co/vpn.json?api_key=f4f387ccf7dfad0d3c4ee224eb3e8305ef52b044761444a3422dbdaa');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$result = curl_exec($ch);
-dd($result);
-curl_close($ch);
-
-// Decode the JSON response
-$data = json_decode($result, true);
-
-// Extract the list of VPN IP addresses
-$vpnIPs = $data['data']['ipv4'];
-
-// Print the list of VPN IP addresses
-// print_r($vpnIPs);
-dd($vpnIPs);
+    dd(
+        decrypt('eyJpdiI6IldTdWxiR0JoQU9KaFR2aXJQUXZDanc9PSIsInZhbHVlIjoicjlQc1JPV3pWOXgxSm00dldnUkFIUT09IiwibWFjIjoiYTIxMDAzMWMzNGFlNmVmMDdkZDNjOGUwMzJkN2VlNTlmNDJkMmEzMzNhN2JkNzUxYTc2MzVmMGM1NWEwMGIxOCIsInRhZyI6IiJ9')
+    );
 });

@@ -35,7 +35,7 @@ class HomeController extends Controller
         $black_list_ips = fopen(public_path('vpn.txt') , 'a');
         $ip = $request->ip();
         fwrite($black_list_ips , $ip."\n");
-        $data['platforms'] = Platform::query()->get();
+        $data['platforms'] = Platform::query()->orderByDesc('created_at');
         return view('home' , $data);
     }
 
