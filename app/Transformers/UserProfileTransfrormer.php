@@ -19,8 +19,8 @@ class UserProfileTransfrormer extends TransformerAbstract
     {
         return [
             'url'  =>  $profile->url,
-            'platform' =>  $profile->service->platform->name,
-            'service' =>  $profile->service->name,
+            'platform' =>  $profile?->service?->platform?->name,
+            'service' =>  $profile->service?->name,
             'created_at'   =>   Carbon::parse($profile->created_at)->toDateTimeString(),
             'actions'      => $this->getActionButtons($profile),
         ];
