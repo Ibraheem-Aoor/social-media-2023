@@ -4,9 +4,12 @@
         .features-item h4 {
             margin-top: -30px !important;
         }
+
         .custom-li {
-            background: lightgray !important;
+            background: #33ccc5 !important;
             margin-bottom: 1% !important;
+            color: white;
+            border-radius: 3%;
         }
     </style>
 @endpush
