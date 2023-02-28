@@ -4,7 +4,7 @@
         .features-item h4 {
             margin-top: -30px !important;
         }
-        li {
+        .custom-li {
             background: lightgray !important;
             margin-bottom: 1% !important;
         }
@@ -37,7 +37,7 @@
                                                 $features = json_decode($service->features, true);
                                             @endphp
                                             @foreach ($features as $feature)
-                                                <li>
+                                                <li class="custom-li">
                                                     {{ $feature }}
                                                 </li>
                                             @endforeach
