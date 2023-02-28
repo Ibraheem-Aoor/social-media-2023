@@ -4,6 +4,10 @@
         .features-item h4 {
             margin-top: -30px !important;
         }
+        li {
+            background: lightgray !important;
+            margin-bottom: 1% !important;
+        }
     </style>
 @endpush
 @section('content')
@@ -30,7 +34,7 @@
                                         <div class="line-dec"></div>
                                         <p>
                                             @php
-                                                $features = json_decode($service->features  , true);
+                                                $features = json_decode($service->features, true);
                                             @endphp
                                             @foreach ($features as $feature)
                                                 <li>
@@ -39,7 +43,8 @@
                                             @endforeach
                                         </p>
                                         <div class="main-green-button scroll-to-section mt-5">
-                                            <a href="{{route('service_offer' , encrypt($service->id))}}">GET RIGHT NOW !</a>
+                                            <a href="{{ route('service_offer', encrypt($service->id)) }}">GET RIGHT NOW
+                                                !</a>
                                         </div>
                                     </div>
                                 </div>
