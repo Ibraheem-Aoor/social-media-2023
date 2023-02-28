@@ -41,7 +41,7 @@
     <meta name="twitter:image:alt" content="social media services">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-seo-dream.css?v=0.01') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-seo-dream.css?v=0.02') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animated.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/owl.css') }}">
 
